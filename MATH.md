@@ -17,7 +17,7 @@ $$x = 7.075 + 4.04 \cdot f \qquad y = 7.075 + 4.04 \cdot r$$
 
 with $f$ = file (a = 0 … h = 7) and $r$ = rank (1 = 0 … 8 = 7).
 
-Reach check: the nearest square a1 is $d = 9.9$ cm away, the farthest square h8 is $d = 50$ cm away. Both are inside the reachable ring $0 \le d \le 2L = 52$ cm.
+Reach check: the nearest square a1 is $d = 10.01$ cm away, the farthest square h8 is $d = 50.0$ cm away. Both are inside the reachable ring $0 \le d \le 2L = 52$ cm.
 
 ### 2. Distance shoulder → gripper
 
@@ -64,4 +64,10 @@ $$\text{gripper} = \text{elbow} + (L\cos(\theta_1 + \theta_2),\; L\sin(\theta_1 
 
 `kinematics.py` runs IK → FK for all 64 squares as a self test: **64/64 ok**.
 
-Hand-written derivation: [calculation](docs/ik_calculation.jpg), [sketch](docs/ik_sketch.jpg)
+Note: my hand-written notes still use $d = 9.9$ cm for a1, from an earlier rough board measurement; the exact value from the board drawing is 10.01 cm.
+
+### Hand-written notes
+
+![Hand-written inverse kinematics calculation](docs/ik_calculation.jpg)
+
+![Sketch of the arm over the board and derivation of the distance formula](docs/ik_sketch.jpg)

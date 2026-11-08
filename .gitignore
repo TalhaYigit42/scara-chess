@@ -1,0 +1,15 @@
+# Python
+.venv/
+__pycache__/
+
+# local calibration + sounds
+calib.npy
+sounds/
+
+# ESP32 secrets (WiFi password!)
+secrets.h
+
+# KiCad backups and caches
+KiCad/**/*-backups/
+KiCad/**/fp-info-cache
+KiCad/**/*.kicad_prl

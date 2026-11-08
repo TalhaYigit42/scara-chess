@@ -129,8 +129,8 @@ The full derivation (square coordinates, distance formula, inverse and forward k
 ## Getting started
 
 ```bash
-git clone https://github.com/<your-username>/<repo-name>.git
-cd <repo-name>
+git clone https://github.com/<your-username>/scara_chess.git
+cd scara_chess
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
