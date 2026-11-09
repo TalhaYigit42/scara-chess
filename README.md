@@ -115,11 +115,13 @@ Since July 2026 the EU charges an extra import fee on every item in small parcel
 
 | File | What it does |
 |---|---|
-| `chessbot.py` | main program (work in progress) |
-| `camera.py` | camera calibration and move detection |
-| `kinematics.py` | square → coordinates, inverse and forward kinematics, self test |
-| `play_in_terminal.py` | play against the bot in the terminal, without hardware |
-| `KiCad/` | PCB design (not started yet) |
+| `src/chessbot.py` | main program (work in progress) |
+| `src/camera.py` | camera calibration and move detection |
+| `src/kinematics.py` | square → coordinates, inverse and forward kinematics, self test |
+| `src/play_in_terminal.py` | play against the bot in the terminal, without hardware |
+| `src/servo_settings.py` | joint angles → servo angles → PCA9685 ticks, limit checks |
+| `firmware/` | ESP32 sketches (servo bridge) |
+| `hardware/pcb/` | KiCad PCB design (not started yet) |
 | `docs/` | notes, sketches, photos |
 
 ## Math
@@ -136,8 +138,8 @@ python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 
-python kinematics.py        # self test, should print 64/64 ok
-python play_in_terminal.py  # play without the robot
+python src/kinematics.py        # self test, should print 64/64 ok
+python src/play_in_terminal.py  # play without the robot
 ```
 
 ## Roadmap

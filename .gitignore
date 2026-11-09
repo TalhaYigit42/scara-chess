@@ -10,6 +10,7 @@ sounds/
 secrets.h
 
 # KiCad backups and caches
-KiCad/**/*-backups/
-KiCad/**/fp-info-cache
-KiCad/**/*.kicad_prl
+*-backups/
+fp-info-cache
+*.kicad_prl
+.ruff_cache/
