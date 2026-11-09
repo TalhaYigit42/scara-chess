@@ -1,10 +1,10 @@
-<img src="docs/logo.png" align="right" width="320" alt="scara-chess logo">
-
 # Chess Robot
 
 [![tests](https://github.com/tkafka42/scara-chess/actions/workflows/tests.yml/badge.svg)](https://github.com/tkafka42/scara-chess/actions/workflows/tests.yml)
 ![Python](https://img.shields.io/badge/python-3.12+-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
+
+<img src="docs/logo.png" align="right" width="280" alt="scara-chess logo">
 
 A chess robot with a 2-link SCARA arm that plays against you on a real wooden board. A camera watches the board, the program decides on a move, and the arm picks up and places the pieces.
 
