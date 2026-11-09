@@ -131,7 +131,7 @@ The full derivation (square coordinates, distance formula, inverse and forward k
 ## Getting started
 
 ```bash
-git clone https://github.com/TalhaYigit42/scara-chess.git
+git clone https://github.com/tkafka42/scara-chess.git
 cd scara-chess
 sudo pacman -S stockfish   # or the stockfish package of your distro
 python -m venv .venv
