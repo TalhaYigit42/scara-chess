@@ -13,7 +13,7 @@ camera ──> move detection ──> chess logic ──> kinematics ──> ser
 
 1. The camera is calibrated once on the empty board and once on the starting position.
 2. After every move it checks which squares changed and works out the move.
-3. The chess logic validates the move and picks a reply.
+3. The chess logic validates the move, and Stockfish (limited to 1500 Elo) picks a reply.
 4. The kinematics turn the target square into shoulder and elbow angles.
 5. A Z axis (rack and pinion) lifts the arm, and the gripper grabs the piece.
 
@@ -115,11 +115,11 @@ Since July 2026 the EU charges an extra import fee on every item in small parcel
 
 | File | What it does |
 |---|---|
-| `chessbot.py` | main program / chess logic |
+| `chessbot.py` | main program (work in progress) |
 | `camera.py` | camera calibration and move detection |
 | `kinematics.py` | square → coordinates, inverse and forward kinematics, self test |
 | `play_in_terminal.py` | play against the bot in the terminal, without hardware |
-| `KiCad/` | PCB design |
+| `KiCad/` | PCB design (not started yet) |
 | `docs/` | notes, sketches, photos |
 
 ## Math
@@ -129,8 +129,9 @@ The full derivation (square coordinates, distance formula, inverse and forward k
 ## Getting started
 
 ```bash
-git clone https://github.com/<your-username>/scara_chess.git
-cd scara_chess
+git clone https://github.com/TalhaYigit42/scara-chess.git
+cd scara-chess
+sudo pacman -S stockfish   # or the stockfish package of your distro
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
