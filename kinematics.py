@@ -2,7 +2,7 @@ import math
 
 FIRST_SQUARE=7.075
 SQUARE_SIZE=4.04
-LINK_LENGHT = 26.0
+LINK_LENGTH = 26.0
 
 def square_to_xy(file, rank):
   x = FIRST_SQUARE + SQUARE_SIZE * file
@@ -11,11 +11,11 @@ def square_to_xy(file, rank):
 
 def inverse_kinematics(x,y):
   d = math.hypot(x,y)
-  if d> LINK_LENGHT*2:
-    raise ValueError()
-    return False
+  if d> LINK_LENGTH*2:
+    raise ValueError(f"target out of reach: d = {d:.1f} cm")
+
   else:
-    phi=2*math.asin(d/(2*LINK_LENGHT))
+    phi=2*math.asin(d/(2*LINK_LENGTH))
     angle02 = math.pi - phi
     beta= math.atan2(y, x)
     alpha = angle02/2
@@ -25,10 +25,10 @@ def inverse_kinematics(x,y):
 def forward_kinematics(angle01,angle02):
   angle01 = math.radians(angle01)
   angle02 = math.radians(angle02)
-  elbow_x = LINK_LENGHT * math.cos(angle01)
-  elbow_y = LINK_LENGHT * math.sin(angle01)
-  gripper_x = elbow_x + (LINK_LENGHT*math.cos(angle01+angle02))
-  gripper_y = elbow_y + (LINK_LENGHT*math.sin(angle01+angle02))
+  elbow_x = LINK_LENGTH * math.cos(angle01)
+  elbow_y = LINK_LENGTH * math.sin(angle01)
+  gripper_x = elbow_x + (LINK_LENGTH*math.cos(angle01+angle02))
+  gripper_y = elbow_y + (LINK_LENGTH*math.sin(angle01+angle02))
   return gripper_x, gripper_y
    
 if __name__ == "__main__":
