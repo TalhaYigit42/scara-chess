@@ -9,7 +9,7 @@ CORNER_NAMES = ["a1", "h1", "h8", "a8"]
 SIZE = 800
 SQ = SIZE // 8
 points = []
-
+MIN_MOVE_SCORE = 8.0
 
 def on_click(event, x, y, flags, param):
     if event == cv2.EVENT_LBUTTONDOWN and len(points) < 4:
@@ -17,6 +17,7 @@ def on_click(event, x, y, flags, param):
 
 
 def calibrate(img):
+    points.clear()
     cv2.namedWindow("Board")
     cv2.setMouseCallback("Board", on_click)
 
@@ -135,6 +136,9 @@ def detect_move(board, scores):
             best_score = weakest
             best_move = move
 
+    if best_score < MIN_MOVE_SCORE:     
+        return None, best_score         
+
     return best_move, best_score
 
 
@@ -158,7 +162,10 @@ if __name__ == "__main__":
 
     board = chess.Board()
     move, conf = detect_move(board, scores)
-    print("Detected:", board.san(move), f"{conf:.1f}")
+    if move is None:
+        print(f"No move detected (best score {conf:.1f})")
+    else:
+        print("Detected:", board.san(move), f"{conf:.1f}")
 
     cv2.imshow("Grid", draw_grid(warped_after))
     wait_for_q()

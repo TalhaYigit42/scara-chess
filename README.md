@@ -172,6 +172,7 @@ I did the calculations in `MATH.md` myself (see the photos of my notes); AI chec
 
 Exceptions, so this stays honest:
 - The self-test loop at the bottom of `kinematics.py` was written with AI help.
+- `servo_settings.py`s self-test written with AI help.
 
 ## License
 
