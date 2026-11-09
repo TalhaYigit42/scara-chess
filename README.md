@@ -1,8 +1,37 @@
+<img src="docs/logo.png" align="right" width="320" alt="scara-chess logo">
+
 # Chess Robot
+
+[![tests](https://github.com/tkafka42/scara-chess/actions/workflows/tests.yml/badge.svg)](https://github.com/tkafka42/scara-chess/actions/workflows/tests.yml)
+![Python](https://img.shields.io/badge/python-3.12+-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
 
 A chess robot with a 2-link SCARA arm that plays against you on a real wooden board. A camera watches the board, the program decides on a move, and the arm picks up and places the pieces.
 
 > **Status: work in progress.** The chess logic, camera calibration and arm kinematics work. The mechanical parts are designed and being printed. The ESP32 firmware is not in this repo yet.
+
+## Table of Contents
+
+- [How it works](#how-it-works)
+- [Design decisions](#design-decisions)
+  - [The board](#the-board)
+  - [Where the arm stands](#where-the-arm-stands)
+  - [Why 26 cm per link](#why-26-cm-per-link)
+  - [Why link 2 runs above link 1](#why-link-2-runs-above-link-1)
+  - [Which of the two IK solutions](#which-of-the-two-ik-solutions)
+  - [The Z axis](#the-z-axis)
+  - [Seeing the board](#seeing-the-board)
+  - [Sound](#sound)
+  - [Parts sourcing](#parts-sourcing)
+- [Hardware](#hardware)
+  - [Measured MG996R (calipers)](#measured-mg996r-calipers)
+- [Project structure](#project-structure)
+- [Math](#math)
+- [Getting started](#getting-started)
+- [Roadmap](#roadmap)
+- [CAD files](#cad-files)
+- [How I use AI in this project](#how-i-use-ai-in-this-project)
+- [License](#license)
 
 ## How it works
 
